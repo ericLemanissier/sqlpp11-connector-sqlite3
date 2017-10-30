@@ -56,6 +56,12 @@ find_library(SQLCIPHER_LIBRARIES NAMES sqlcipher
   ${PC_SQLCIPHER_LIBRARY_DIRS}
 )
 
+find_library(CRYPTO_LIBRARIES NAMES crypto
+  PATHS
+  ${PC_SQLCIPHER_LIBDIR}
+  ${PC_SQLCIPHER_LIBRARY_DIRS}
+)
+
 add_definitions(-DSQLITE_HAS_CODEC)
 
 include(FindPackageHandleStandardArgs)
